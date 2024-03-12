@@ -53,6 +53,15 @@ jobs:
             artifact: true
             cache-limit: 1
 
+          - name: Custom template (target=template_release)
+            cache-name: linux-template-custom
+            target: template_release
+            sconsflags: debug_symbols=no
+            bin: "./bin/godot.linuxbsd.template_release.x86_64"
+            tests: true
+            artifact: true
+            cache-limit: 1
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
