@@ -21,25 +21,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Editor (target=editor, tests=yes)
-            cache-name: windows-editor
-            target: editor
-            tests: true
-            # Skip debug symbols, they're way too big with MSVC.
-            sconsflags: debug_symbols=no vsproj=yes vsproj_gen_only=no windows_subsystem=console
-            bin: ./bin/godot.windows.editor.x86_64.exe
-            compiler: msvc
-            cache-limit: 2
-
-          - name: Editor w/ clang-cl (target=editor, tests=yes, use_llvm=yes)
-            cache-name: windows-editor-clang
-            target: editor
-            tests: true
-            sconsflags: debug_symbols=no windows_subsystem=console use_llvm=yes
-            bin: ./bin/godot.windows.editor.x86_64.llvm.exe
-            compiler: clang
-            cache-limit: 1
-
           - name: Template (target=template_release, tests=yes)
             cache-name: windows-template
             target: template_release
