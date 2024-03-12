@@ -24,11 +24,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: Template w/ Mono (target=template_release)
-            cache-name: linux-template-mono
+          - name: Template (target=template_release)
+            cache-name: linux-template
             target: template_release
-            sconsflags: module_mono_enabled=yes
-            build-mono: false
+            sconsflags: debug_symbols=no
             tests: false
             artifact: true
 
