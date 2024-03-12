@@ -952,8 +952,8 @@ Variant AnimationMixer::post_process_key_value(const Ref<Animation> &p_anim, int
 }
 
 Variant AnimationMixer::_post_process_key_value(const Ref<Animation> &p_anim, int p_track, Variant p_value, const Object *p_object, int p_object_idx) {
-	switch (p_anim->track_get_type(p_track)) {
 #ifndef _3D_DISABLED
+	switch (p_anim->track_get_type(p_track)) {
 		case Animation::TYPE_POSITION_3D: {
 			if (p_object_idx >= 0) {
 				const Skeleton3D *skel = Object::cast_to<Skeleton3D>(p_object);
@@ -961,10 +961,10 @@ Variant AnimationMixer::_post_process_key_value(const Ref<Animation> &p_anim, in
 			}
 			return p_value;
 		} break;
-#endif // _3D_DISABLED
 		default: {
 		} break;
 	}
+#endif // _3D_DISABLED
 	return p_value;
 }
 
