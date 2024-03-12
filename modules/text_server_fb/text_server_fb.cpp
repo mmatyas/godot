@@ -873,7 +873,7 @@ _FORCE_INLINE_ bool TextServerFallback::_ensure_cache_for_size(FontFallback *p_f
 			// Read OpenType variations.
 			p_font_data->supported_varaitions.clear();
 			if (fd->face->face_flags & FT_FACE_FLAG_MULTIPLE_MASTERS) {
-				FT_MM_Var *amaster;
+				FT_MM_Var *amaster = nullptr;
 				FT_Get_MM_Var(fd->face, &amaster);
 				for (FT_UInt i = 0; i < amaster->num_axis; i++) {
 					p_font_data->supported_varaitions[(int32_t)amaster->axis[i].tag] = Vector3i(amaster->axis[i].minimum / 65536, amaster->axis[i].maximum / 65536, amaster->axis[i].def / 65536);
