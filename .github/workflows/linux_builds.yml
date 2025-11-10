@@ -6,7 +6,6 @@ on:
 env:
   SCONS_FLAGS: >-
     dev_mode=yes
-    module_text_server_fb_enabled=yes
     "accesskit_sdk_path=${{ github.workspace }}/accesskit-c-0.17.0/"
     ${{ vars.SCONSFLAGS_GODOT45 }}
   GODOT_CPP_BRANCH: 4.4

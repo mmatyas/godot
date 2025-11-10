@@ -6,7 +6,6 @@ on:
 env:
   SCONS_FLAGS: >-
     dev_mode=yes
-    module_text_server_fb_enabled=yes
     tests=no
     swappy=yes
     ${{ vars.SCONSFLAGS_GODOT45 }}
