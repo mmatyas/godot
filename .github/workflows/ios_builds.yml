@@ -9,6 +9,8 @@ env:
     module_text_server_fb_enabled=yes
     tests=no
     debug_symbols=no
+    ${{ vars.SCONSFLAGS_GODOT45 }}
+  SCRIPT_AES256_ENCRYPTION_KEY: ${{ secrets.SCRIPT_AES256_ENCRYPTION_KEY }}
 
 jobs:
   ios-template:

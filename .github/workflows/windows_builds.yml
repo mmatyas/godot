@@ -11,8 +11,10 @@ env:
     d3d12=yes
     "angle_libs=${{ github.workspace }}/"
     "accesskit_sdk_path=${{ github.workspace }}/accesskit-c-0.17.0/"
+    ${{ vars.SCONSFLAGS_GODOT45 }}
   SCONS_CACHE_MSVC_CONFIG: true
   PYTHONIOENCODING: utf8
+  SCRIPT_AES256_ENCRYPTION_KEY: ${{ secrets.AESKEY_GODOT45 }}
 
 jobs:
   build-windows:

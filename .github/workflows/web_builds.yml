@@ -9,7 +9,9 @@ env:
     tests=no
     debug_symbols=no
     use_closure_compiler=yes
+    ${{ vars.SCONSFLAGS_GODOT45 }}
   EM_VERSION: 4.0.11
+  SCRIPT_AES256_ENCRYPTION_KEY: ${{ secrets.SCRIPT_AES256_ENCRYPTION_KEY }}
 
 jobs:
   web-template:
