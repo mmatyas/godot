@@ -15,28 +15,10 @@ jobs:
 
   # Second stage: Run all the builds and some of the tests.
 
-  android-build:
-    name: 🤖 Android
-    needs: static-checks
-    uses: ./.github/workflows/android_builds.yml
-    secrets: inherit
-
-  ios-build:
-    name: 🍏 iOS
-    needs: static-checks
-    uses: ./.github/workflows/ios_builds.yml
-    secrets: inherit
-
   linux-build:
     name: 🐧 Linux
     needs: static-checks
     uses: ./.github/workflows/linux_builds.yml
-    secrets: inherit
-
-  macos-build:
-    name: 🍎 macOS
-    needs: static-checks
-    uses: ./.github/workflows/macos_builds.yml
     secrets: inherit
 
   windows-build:
