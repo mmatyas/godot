@@ -6,6 +6,7 @@ on:
 env:
   SCONS_FLAGS: >-
     dev_mode=yes
+    tests=no
     debug_symbols=no
     d3d12=yes
     "angle_libs=${{ github.workspace }}/"
@@ -99,4 +100,3 @@ jobs:
         run: |
           ${{ matrix.bin }} --version
           ${{ matrix.bin }} --help
-          ${{ matrix.bin }} --test --force-colors

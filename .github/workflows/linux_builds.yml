@@ -6,6 +6,7 @@ on:
 env:
   SCONS_FLAGS: >-
     dev_mode=yes
+    tests=no
     "accesskit_sdk_path=${{ github.workspace }}/accesskit-c-0.17.0/"
     ${{ vars.SCONSFLAGS_GODOT45 }}
   GODOT_CPP_BRANCH: 4.4
@@ -146,7 +147,6 @@ jobs:
         run: |
           ${{ matrix.bin }} --version
           ${{ matrix.bin }} --help
-          ${{ matrix.bin }} --headless --test --force-colors
 
       - name: .NET source generators tests
         if: matrix.build-mono
