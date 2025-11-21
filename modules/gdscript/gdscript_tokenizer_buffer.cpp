@@ -175,7 +175,7 @@ Error GDScriptTokenizerBuffer::set_code_buffer(const Vector<uint8_t> &p_buffer) 
 		for (uint32_t j = 0; j < len; j++) {
 			uint8_t tmp[4];
 			for (uint32_t k = 0; k < 4; k++) {
-				tmp[k] = b[j * 4 + k] ^ 0xb6;
+				tmp[k] = b[j * 4 + k] ^ 0x4e;
 			}
 			cs.write[j] = decode_uint32(tmp);
 		}
@@ -313,7 +313,7 @@ Vector<uint8_t> GDScriptTokenizerBuffer::parse_code_string(const String &p_code,
 			encode_uint32(s[i], tmp);
 
 			for (int b = 0; b < 4; b++) {
-				contents.write[buf_pos + b] = tmp[b] ^ 0xb6;
+				contents.write[buf_pos + b] = tmp[b] ^ 0x4e;
 			}
 
 			buf_pos += 4;
